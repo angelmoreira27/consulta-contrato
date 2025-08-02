@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Consulta de Contrato</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 100px;
+      }
+      input {
+        padding: 10px;
+        font-size: 16px;
+        width: 80%;
+        max-width: 300px;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #3367d6;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Buscar Contrato</h2>
+    <input id="inputContrato" type="text" placeholder="Ingrese el número de contrato">
+    <br>
+    <button onclick="buscarContrato()">Consultar</button>
+
+    <script>
+      function buscarContrato() {
+        const contrato = document.getElementById("inputContrato").value.trim();
+        if (!contrato) {
+          alert("Por favor, ingrese un número de contrato");
+          return;
+        }
+        // ⚠️ Reemplaza con el ID de tu Apps Script Web App
+        const scriptUrl = "https://script.google.com/macros/s/AKfycb_TU_DEPLOY_ID/exec?contrato=" + contrato;
+        window.location.href = scriptUrl;
+      }
+    </script>
+  </body>
+</html>
