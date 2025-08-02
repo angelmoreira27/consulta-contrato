@@ -27,7 +27,7 @@
     </style>
   </head>
   <body>
-    <h2>Buscar Contrato actual</h2>
+    <h2>Buscar Contrato actual #3</h2>
     <input id="inputContrato" type="text" placeholder="Ingrese el número de contrato">
     <br>
     <button onclick="buscarContrato()">Consultar</button>
@@ -42,23 +42,20 @@
         // ⚠️ Reemplaza con el ID de tu Apps Script Web App
         //const scriptUrl = "https://script.google.com/macros/s/AKfycbydWf-lrzX2066rECbGIc8tWv5yfILoJlDebGCTSNxgZdxPsqGsnyuXL6o09rhi8jw8/exec?contrato=" + contrato;
         //window.location.href = scriptUrl;
-        fetch("https://script.google.com/macros/s/AKfycbydWf-lrzX2066rECbGIc8tWv5yfILoJlDebGCTSNxgZdxPsqGsnyuXL6o09rhi8jw8/exec?contrato=" + contrato, {
-            method: 'GET',
-            redirect: 'follow'
-        })
-        .then(res => {
-            if (res.redirected) {
-                window.location.href = res.url; // Redirige manualmente
-            } else {
-                // Si no redirige, abre normal
-                res.text().then(html => document.body.innerHTML = html);
-            }
-        })
-        .catch(err => alert("Error de conexión: " + err));
-        
+        fetch("https://script.google.com/macros/s/AKfycbydWf-lrzX2066rECbGIc8tWv5yfILoJlDebGCTSNxgZdxPsqGsnyuXL6o09rhi8jw8/exec?contrato="+contrato, {
+    redirect: "follow"
+})
+.then(res => {
+    if (res.redirected) {
+        window.location.href = res.url;
+    } else {
+        // Mostrar algo si no redirige
+    }
+});
       }
     </script>
   </body>
 
 </html>
+
 
