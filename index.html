@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Consulta de Contrato</title>
+    <title>Consulta de Contrato #3</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
       body {
@@ -40,8 +40,22 @@
           return;
         }
         // ⚠️ Reemplaza con el ID de tu Apps Script Web App
-        const scriptUrl = "https://script.google.com/macros/s/AKfycbydWf-lrzX2066rECbGIc8tWv5yfILoJlDebGCTSNxgZdxPsqGsnyuXL6o09rhi8jw8/exec?contrato=" + contrato;
-        window.location.href = scriptUrl;
+        //const scriptUrl = "https://script.google.com/macros/s/AKfycbydWf-lrzX2066rECbGIc8tWv5yfILoJlDebGCTSNxgZdxPsqGsnyuXL6o09rhi8jw8/exec?contrato=" + contrato;
+        //window.location.href = scriptUrl;
+        fetch("https://script.google.com/macros/s/AKfycbydWf-lrzX2066rECbGIc8tWv5yfILoJlDebGCTSNxgZdxPsqGsnyuXL6o09rhi8jw8/exec?contrato=" + contrato, {
+            method: 'GET',
+            redirect: 'follow'
+        })
+        .then(res => {
+            if (res.redirected) {
+                window.location.href = res.url; // Redirige manualmente
+            } else {
+                // Si no redirige, abre normal
+                res.text().then(html => document.body.innerHTML = html);
+            }
+        })
+        .catch(err => alert("Error de conexión: " + err));
+        
       }
     </script>
   </body>
