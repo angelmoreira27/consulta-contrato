@@ -42,7 +42,7 @@
   <body>
   <form>
    <div class="container pt-5">
-    <h2>Buscar Contrato</h2>
+    <h2>Buscar Contratos o productos de Fugas</h2>
     <select id="selectdato" name="selectdato" class="form-control">
       <option value="1">Contrato</option>
       <option value="2">Producto</option>
@@ -74,9 +74,9 @@
 
     let scriptUrl = "";
     if (selectElement.value === "1") {
-      scriptUrl = "https://script.google.com/macros/s/AKfycbwAo7g27gil3ZmOFontPqWxhkqUlY9wOvQ_Z-zOoIF2xaSANDjZqm-1Zsk_MYhYwc-L/exec?contrato=" + valoringresar + "&producto=";
+      scriptUrl = "https://script.google.com/macros/s/AKfycbwcopf_jTEk4A8SMzPUpwscayiTQn2A8VJKnLjboPwD529n_RbYaZaRFehDv43rpc6V/exec?contrato=" + valoringresar + "&producto=";
     } else {
-      scriptUrl = "https://script.google.com/macros/s/AKfycbwAo7g27gil3ZmOFontPqWxhkqUlY9wOvQ_Z-zOoIF2xaSANDjZqm-1Zsk_MYhYwc-L/exec?contrato=&producto=" + valoringresar;
+      scriptUrl = "https://script.google.com/macros/s/AKfycbwcopf_jTEk4A8SMzPUpwscayiTQn2A8VJKnLjboPwD529n_RbYaZaRFehDv43rpc6V/exec?contrato=&producto=" + valoringresar;
     }
 
     // Esperar 0.5 segundos y luego redireccionar
